@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  final conteo = 20;
+class ContadorPage extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => _ContadorPageState();
+}
 
-  final estiloTexto =
+class _ContadorPageState extends State<ContadorPage> {
+  int _conteo = 0;
+
+  final _estiloTexto =
       new TextStyle(fontSize: 25, backgroundColor: Colors.orange);
 
   @override
@@ -20,11 +25,11 @@ class HomePage extends StatelessWidget {
         children: <Widget>[
           Text(
             'Nº de Golpes',
-            style: estiloTexto,
+            style: _estiloTexto,
           ),
           Text(
-            '$conteo',
-            style: estiloTexto,
+            '$_conteo',
+            style: _estiloTexto,
           )
         ],
       )),
@@ -33,7 +38,9 @@ class HomePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.videogame_asset),
         onPressed: () {
-          print('hola');
+          _conteo++;
+          //Redibuja todo el widget
+          setState(() {});
         },
       ),
     );
