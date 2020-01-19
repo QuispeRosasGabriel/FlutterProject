@@ -44,19 +44,25 @@ class _ContadorPageState extends State<ContadorPage> {
       children: <Widget>[
         FloatingActionButton(
           child: Icon(Icons.add),
-          onPressed: () {},
+          onPressed: _agregar,
         ),
         // Propiedad que sirve para generar margen a los costados
         // SizedBox(width: 5.0),
         FloatingActionButton(
           child: Icon(Icons.restore),
-          onPressed: () {},
+          onPressed: _reincio,
         ),
         FloatingActionButton(
           child: Icon(Icons.remove),
-          onPressed: () {},
+          onPressed: _restar,
         ),
       ],
     );
   }
+
+  void _agregar() => setState(() => _conteo++);
+
+  void _restar() => setState(() => _conteo--);
+
+  void _reincio() => setState(() => _conteo = _conteo - _conteo);
 }
