@@ -43,8 +43,8 @@ class _ContadorPageState extends State<ContadorPage> {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
         FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: _agregar,
+          child: Icon(Icons.remove),
+          onPressed: _restar,
         ),
         // Propiedad que sirve para generar margen a los costados
         // SizedBox(width: 5.0),
@@ -52,9 +52,10 @@ class _ContadorPageState extends State<ContadorPage> {
           child: Icon(Icons.restore),
           onPressed: _reincio,
         ),
+
         FloatingActionButton(
-          child: Icon(Icons.remove),
-          onPressed: _restar,
+          child: Icon(Icons.add),
+          onPressed: _agregar,
         ),
       ],
     );
